@@ -1,0 +1,105 @@
+[core]
+  quotepath = false
+  whitespace = trailing-space,space-before-tab
+
+[i18n]
+  commitencoding = UTF-8
+  logoutputencoding = UTF-8
+
+[color]
+  ui = true
+  branch = auto
+  diff = auto
+  status = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+#startalias
+  # basic
+  s = status -u
+  co = checkout
+  b = branch
+  fm = pull
+  f = fetch
+  m = merge
+  rb = rebase
+  cp = cherry-pick
+  p = push
+  d = diff
+  dt = difftool
+  i = show
+  l = log
+  c = commit
+  a = add
+  r = remote
+  rst = reset
+  st = stash
+  mt = mergetool
+
+  # extended
+  in = show --name-only
+  aa = add -A -v
+  bb = branch -avv
+  bd = branch -D
+  bm = branch -M
+  ff = fetch --all
+  rr = remote -v
+  pp = push -f
+  dn = diff --name-only
+  dc = diff --cached
+  ds = diff --name-status
+  ll = log --pretty=format:'%Cgreen%h%Creset %s: %Cblue%an, %ar%Creset'
+  ame = commit --amend
+  amr = commit --amend --reset-author
+  amf = commit --amend --no-edit
+  ama = commit --amend --all
+  amaf = commit --amend --all --no-edit
+  t = log --all --graph --decorate --oneline --abbrev-commit
+  tt = log --all --graph --decorate --oneline --abbrev-commit --all
+  sup = branch -u
+  sta = stash apply
+  stl = stash apply
+  sts = stash apply
+  rsth = reset --hard
+  rsts = reset --soft
+  rstm = reset --merge
+
+  ra = remote add
+  rao = remote add origin
+  rba = rebase --abort
+  rbc = rebase --continue
+  ma = merge --abort
+  mc = merge --continue
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+  cl = clean -fd
+  cob = checkout -b
+
+  rvco = review -d
+  rvcp = review -x
+
+  # complex
+  upload = push -u origin master
+  download = !git fetch && git checkout -t -b master origin/master
+  reload = !git fetch && git reset --hard FETCH_HEAD
+
+  # external
+  v = !vim
+  alias = !awk "/^#startalias/,/^#endalias/" /etc/gitconfig
+  sync = !sh ~/scripts/sync.sh
+#endalias

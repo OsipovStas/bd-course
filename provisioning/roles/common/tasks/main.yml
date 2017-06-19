@@ -1,0 +1,47 @@
+---
+- name: Install the EPEL repository
+  yum:
+    name: '{{ epel_package_url }}'
+    state: present
+
+- name: Install the support tools
+  yum:
+    name: '{{ item }}'
+    state: present
+  with_items:
+   - tmux
+   - htop
+   - vim
+   - git
+   - nc
+   - telnet
+   - net-tools
+   - sysstat
+   - lsof
+   - nmap
+   - screen
+   - mc
+   - telnet
+   - ftp
+   - wget
+   - unzip
+   - curl
+
+- name: Set shell colors
+  template:
+    src: colorcmd.sh.j2
+    dest: /etc/profile.d/colorcmd.sh
+
+- name: Git config
+  template:
+    src: gitconfig.j2
+    dest: /etc/gitconfig
+
+- name: Prepare Yum
+  yum:
+    name: '{{ item }}'
+    state: present
+  with_items:
+   - yum-utils
+   - device-mapper-persistent-data
+   - lvm2

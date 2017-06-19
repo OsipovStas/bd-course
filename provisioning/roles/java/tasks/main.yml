@@ -1,0 +1,7 @@
+---
+- name: Install Java
+  yum: name=/vagrant/provisioning/jdk-8u131-linux-x64.rpm
+
+
+
+
