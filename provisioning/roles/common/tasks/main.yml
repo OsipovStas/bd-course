@@ -12,19 +12,14 @@
    - tmux
    - htop
    - vim
-   - git
    - nc
    - telnet
    - net-tools
-   - sysstat
    - lsof
-   - nmap
-   - screen
    - mc
-   - telnet
-   - ftp
    - wget
    - unzip
+   - ntp
    - curl
 
 - name: Set shell colors
@@ -32,16 +27,5 @@
     src: colorcmd.sh.j2
     dest: /etc/profile.d/colorcmd.sh
 
-- name: Git config
-  template:
-    src: gitconfig.j2
-    dest: /etc/gitconfig
 
-- name: Prepare Yum
-  yum:
-    name: '{{ item }}'
-    state: present
-  with_items:
-   - yum-utils
-   - device-mapper-persistent-data
-   - lvm2
+
