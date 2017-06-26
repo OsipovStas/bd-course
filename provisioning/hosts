@@ -1,7 +1,7 @@
-127.0.0.1	node1.local	node1
-127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
-::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-172.28.128.3	node1 node1.local
-172.28.128.4	node2 node2.local
-172.28.128.5	node3 node3.local
-172.28.128.6	node4 node3.local
+# 127.0.0.1     node2.local     node2
+# 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+# ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+172.28.128.3    node1.local node1
+172.28.128.4    node2.local node2
+172.28.128.5    node3.local node3
+172.28.128.6    node4.local node4
