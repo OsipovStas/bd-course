@@ -1,0 +1,20 @@
+- hosts: all
+  user: vagrant
+  sudo: True
+  tasks:
+    - name: Install NTP
+      yum:
+        pkg: ntp
+        state: installed
+
+    - name: Start NTP
+      command: service ntpd start#
+
+    - name: Create hostname entry to {{ ownhostname }}
+      lineinfile: dest=/etc/hostname state=present create=yes regexp='.*' line='{{ ownhostname }}'
+
+    - name: Set networking yes
+      lineinfile: dest=/etc/sysconfig/network create=yes state=present regexp='NETWORKING=.*' line='NETWORKING=yes'
+
+    - name: Set hostname to {{ ownhostname }}
+      lineinfile: dest=/etc/sysconfig/network create=yes state=present regexp='HOSTNAME=.*' line='HOSTNAME={{ ownhostname }}'
