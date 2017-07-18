@@ -51,5 +51,8 @@
     - name: Configure Ambari server
       command: ambari-server setup -s
 
-    - name: Start Ambari server
-      command: 'sleep 10 && ambari-server start'
+    - name: Sleep
+      command: 'sleep 5'
+
+    - name: Start server
+      command: "ambari-server start"

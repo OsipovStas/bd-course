@@ -4,9 +4,9 @@ HDP_AMBARI_REPO="http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates
 
 nodes = [
     {:name => "node1", :cpu => 1, :mem => 4096, :ip => "172.28.128.3"},
-    {:name => "node2", :cpu => 1, :mem => 4096, :ip => "172.28.128.4"},
-    {:name => "node3", :cpu => 1, :mem => 4096, :ip => "172.28.128.5"},
-    {:name => "node4", :cpu => 1, :mem => 4096, :ip => "172.28.128.6"}
+    {:name => "node2", :cpu => 1, :mem => 2048, :ip => "172.28.128.4"},
+    {:name => "node3", :cpu => 1, :mem => 2048, :ip => "172.28.128.5"},
+    {:name => "node4", :cpu => 1, :mem => 2048, :ip => "172.28.128.6"}
 ]
 
 VAGRANTFILE_API_VERSION = "2"
@@ -15,7 +15,7 @@ PLAYBOOK_PATH='provisioning/'
 PLAYBOOK_NAME='hdp_centos7_playbook.yml'
 
 HOST_TLD = "bigdata"
-AMBARI_HOST_NAME = "node_1.%s" % HOST_TLD
+AMBARI_HOST_NAME = "node1.%s" % HOST_TLD
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
