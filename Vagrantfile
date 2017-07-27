@@ -6,7 +6,7 @@ nodes = [
     {:name => "node1", :cpu => 1, :mem => 4096, :ip => "172.28.128.3"},
     {:name => "node2", :cpu => 1, :mem => 2048, :ip => "172.28.128.4"},
     {:name => "node3", :cpu => 1, :mem => 2048, :ip => "172.28.128.5"},
-    {:name => "node4", :cpu => 1, :mem => 2048, :ip => "172.28.128.6"}
+    {:name => "node4", :cpu => 2, :mem => 4096, :ip => "172.28.128.6"}
 ]
 
 VAGRANTFILE_API_VERSION = "2"
